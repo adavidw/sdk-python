@@ -25,7 +25,7 @@ matrix:
 install:
  - pip install unittest2
  - pip install nose
- - pip install pyxb
+ - pip install pyxb==1.2.5
  - pip install lxml
  - pip install coveralls
 
