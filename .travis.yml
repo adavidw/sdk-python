@@ -34,7 +34,7 @@ before_script:
   - git submodule update --remote --recursive
 
 script:
- - nosetests --with-coverage -cover-package=authorizenet
+# - nosetests --with-coverage -cover-package=authorizenet
  - coveralls
  - python setup.py install
  - cd sample-code-python
