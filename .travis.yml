@@ -26,8 +26,8 @@ install:
  - pip install unittest2
  - pip install nose
  - pip install pyxb==1.2.5
- - pip install lxml
- - pip install coveralls
+ - pip install lxml==3.73
+ - pip install coveralls==1.1
 
 before_script:
   - git submodule update --remote --recursive
