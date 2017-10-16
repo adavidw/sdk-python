@@ -40,8 +40,8 @@ install:
   - pip install coverage # I added this
   - pip install pyxb==1.2.5 # can't change the pyxb version without changing the version in setup.py
                             # and regenerating the bindings in apicontractsv1.py
-#  - pip install lxml
-  - pip install lxml==3.7.3
+  - pip install lxml
+#  - pip install lxml==3.7.3
 #  - if [[ "$TEST_SUITE" == "coverage" ]]; then pip install coveralls==1.1; fi
 
 before_script:
@@ -52,8 +52,6 @@ before_script:
 script:
   # execute all of the tests or other commands to determine
   # whether the build will pass or fail
-  - python -c "import json, urllib2; print json.load(urllib2.urlopen('https://www.howsmyssl.com/a/check'))['tls_version']"
-  - python3 -c "import json, urllib.request; print(json.loads(urllib.request.urlopen('https://www.howsmyssl.com/a/check').read().decode('UTF-8'))['tls_version'])"
 #  - if [[ "$TEST_SUITE" == "coverage" ]]; then nosetests --with-coverage -cover-package=authorizenet; coveralls; fi
   - if [[ "$TEST_SUITE" == "coverage" ]]; then nosetests --with-coverage -cover-package=authorizenet; fi
   - if [[ "$TEST_SUITE" == "samples" ]]; then python setup.py install; cd sample-code-python; python ./test-runner.py; fi

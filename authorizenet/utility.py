@@ -18,15 +18,15 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-class helper(): 
+class helper():
     __parser = "null"
     __propertyfilename = "null"
     __initialized = False
-    
+
     @staticmethod
     def getparser():
         return helper.__parser
-    
+
     @staticmethod
     def getpropertyfile():
         return helper.__propertyfilename
@@ -34,15 +34,15 @@ class helper():
     @staticmethod
     def setpropertyfile(propertyfilename):
         if (propertyfilename == 'null' or os.path.isfile(propertyfilename) == False):
-            helper.__propertyfilename = 'null' 
-        else:     
+            helper.__propertyfilename = 'null'
+        else:
             helper.__propertyfilename = propertyfilename
         return
 
     @staticmethod
     def __classinitialized():
         return helper.__initialized
-    
+
     @staticmethod
     def getproperty(propertyname):
         stringvalue = "null"
@@ -51,7 +51,7 @@ class helper():
             if (False == helper.__classinitialized()):
                 if ('null' == helper.getparser()):
                     try:
-                        helper.__parser = SafeConfigParser({"http":"","https":"","ftp":""})
+                        helper.__parser = SafeConfigParser({"http":"", "https":"", "ftp":""})
                     except:
                         logger.debug("Parser could not be initialized")
 
@@ -66,8 +66,8 @@ class helper():
             try:
                 stringvalue = helper.getparser().get("properties", propertyname)
             except:
-                logger.debug("'%s' not found\n" %propertyname )
-                
-        if ( "null" == stringvalue):
-            stringvalue = os.getenv(propertyname)               
-        return stringvalue 
+                logger.debug("'%s' not found\n" %propertyname)
+
+        if ("null" == stringvalue):
+            stringvalue = os.getenv(propertyname)
+        return stringvalue
