@@ -4,8 +4,8 @@ sudo: false
 
 python:
   - "2.7"
-  - "3.4"
-  - "3.5"
+  # - "3.4"
+  # - "3.5"
   - "3.6"
 #  - "3.7-dev"
 #  - "pypy"
@@ -30,7 +30,8 @@ install:
   # install all of the dependencies we need here
   - pip install unittest2
   - pip install nose
-  - pip install pyxb==1.2.5
+  - pip install pyxb
+  # - pip install pyxb==1.2.5
   - pip install lxml
 #  - pip install lxml==3.7.3
 #  - pip install coveralls==1.1
