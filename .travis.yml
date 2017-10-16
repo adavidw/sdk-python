@@ -52,6 +52,6 @@ before_script:
 script:
   # execute all of the tests or other commands to determine
   # whether the build will pass or fail
-#  - if [[ "$TEST_SUITE" == "coverage" ]]; then nosetests --with-coverage -cover-package=authorizenet; coveralls; fi
-  - if [[ "$TEST_SUITE" == "coverage" ]]; then nosetests --with-coverage -cover-package=authorizenet; fi
+  - if [[ "$TEST_SUITE" == "coverage" ]]; then nosetests --with-coverage -cover-package=authorizenet; coveralls; fi
+#  - if [[ "$TEST_SUITE" == "coverage" ]]; then nosetests --with-coverage -cover-package=authorizenet; fi
   - if [[ "$TEST_SUITE" == "samples" ]]; then python setup.py install; cd sample-code-python; python ./test-runner.py; fi
