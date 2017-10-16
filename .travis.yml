@@ -30,8 +30,8 @@ install:
   # install all of the dependencies we need here
   - pip install unittest2
   - pip install nose
-  - pip install pyxb
-  # - pip install pyxb==1.2.5
+  - pip install pyxb==1.2.5 # can't change the pyxb version without changing the version in setup.py
+                            # and regenerating the bindings in apicontractsv1.py
   - pip install lxml
 #  - pip install lxml==3.7.3
 #  - pip install coveralls==1.1
