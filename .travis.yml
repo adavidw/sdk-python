@@ -43,6 +43,7 @@ install:
   - pip install lxml
 #  - pip install lxml==3.7.3
 #  - if [[ "$TEST_SUITE" == "coverage" ]]; then pip install coveralls==1.1; fi
+  - if [[ "$TEST_SUITE" == "coverage" ]]; then pip install coveralls; fi
 
 before_script:
   # execute all of the commands which need to be executed 
