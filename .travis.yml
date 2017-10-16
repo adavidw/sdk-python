@@ -37,7 +37,7 @@ install:
   - pip install unittest2
   - pip install nose
   - which nosetests
-  - pip install coverage # I added this
+#  - pip install coverage # I added this
   - pip install pyxb==1.2.5 # can't change the pyxb version without changing the version in setup.py
                             # and regenerating the bindings in apicontractsv1.py
   - pip install lxml
